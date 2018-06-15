@@ -32,4 +32,11 @@ set-up-git-on-dir:
 	  git remote add origin $(GITREMOTEDIR) && \
 	  git push origin master
 
+set-up-keychain:
+	$(SSHCMD) "sudo apt-get install keychain"
+
+# Then add `keychain --nogui id_rsa` to .profile.
+# And add `. ~/.keychain/$HOSTNAME-sh` to .bashrc.
+# And prefix cron command with . ~/.keychain/$HOSTNAME-sh; 
+# https://stackoverflow.com/questions/869589/why-ssh-fails-from-crontab-but-succedes-when-executed-from-a-command-line#18041092
 
