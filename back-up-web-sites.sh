@@ -24,6 +24,6 @@ do
     echo "--START--" >> "${current_log}"
     date >> "${current_log}"
     cd "${root}/${dir##*/}" || exit
-    rsync -a "bot@${serveraddress}:${serverroot}/${archivename}/" .  >> "${current_log}"
+    rsync -a --progress "bot@${serveraddress}:${serverroot}/${archivename}/" . --exclude .git >> "${current_log}"
     echo "--END--" >> "${current_log}"
 done
