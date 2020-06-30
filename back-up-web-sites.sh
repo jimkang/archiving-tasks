@@ -21,6 +21,7 @@ do
     archivename=$(basename "$dir")
     current_log="${tasksdir}/${domain}-${archivename}-backup.log"
     echo "$current_log"
+    echo "--START--" >> "${current_log}"
     date >> "${current_log}"
     cd "${root}/${dir##*/}" || exit
     rsync -a "bot@${serveraddress}:${serverroot}/${archivename}/" .  >> "${current_log}"
