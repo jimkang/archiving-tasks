@@ -13,13 +13,6 @@ if [[ ! $serverbasedir ]] || [[ ! $domain ]]; then
   exit 1;
 fi
 
-#if [ -x /usr/bin/keychain ]; then
-#  /usr/bin/keychain --quiet --clear "$HOME/.ssh/id_rsa"
-#fi
-
-
-#eval $(ssh-agent)
-
 for dir in $root/*/
 
 do
