@@ -32,6 +32,6 @@ do
     echo "USER: ${user}" >> "${current_log}"
     echo "DIR: ${root}/${dir##*/}" >> "${current_log}"
     cd "${root}/${dir##*/}" || exit 1
-    rsync -azv --progress --exclude '.git' -e "ssh -i /home/pi/.ssh/id_rsa" bot@${serveraddress}:${serverroot}/${archivename} . >> ${current_log} 2>> ${error_log}
+    rsync -azv --progress --exclude '.git' -e "ssh -i /home/pi/.ssh/id_rsa" bot@${serveraddress}:${serverroot}/${archivename}/ . >> ${current_log} 2>> ${error_log}
     echo "--END--" >> "${current_log}"
 done
